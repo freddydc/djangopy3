@@ -7,7 +7,11 @@ from .views import (
 app_name = 'articles'
 
 urlpatterns = [
+    ## pk <=> id, pk is required por defecto: '<int:pk>/', for views based in CLASS. ##
+        ## Para utilizar "id", create a function in views.
     path('', ArticleListView.as_view(), name='article-list'),
-    ## PK is required '<int:pk>/' for views based in class. PK <=> ID ##
-    path('<int:pk>/', ArticleDetailView.as_view(), name='article-detail'),
+    ## Url default, acepta "pk" ##
+    # path('<int:pk>/', ArticleDetailView.as_view(), name='article-detail'),
+    ## Url mejorado, para aceptar "id"  ##
+    path('<int:my_id>/', ArticleDetailView.as_view(), name='article-detail'),
 ]
