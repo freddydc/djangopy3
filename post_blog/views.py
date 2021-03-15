@@ -113,17 +113,18 @@ def form_create_view(request):
         'form': my_form,
     }
 
-    return render(request, 'post_blog/form_app_first.html', context)
+    return render(request, 'post_blog/form_create_view.html', context)
 
 
 ### Metodo 2:
     # Formulario dos
 
-def form_app(request):
+def form_create_url(request):
 
-    ## For get method example: 
-        # localhost:8000/form_app/?title=a title here
-    print(f"\nForm request GET: {request.GET} \nForm request GET, title: {request.GET['title']} \nForm request POST: {request.POST}\n")
+    ## For get method example:
+        # <== For view this: ==>
+            # localhost:8000/form_app/?title=a title here
+    print(f"\nForm req GET: {request.GET} \nForm req GET (title): {request.GET['title']} \nForm req POST: {request.POST}\n")
 
     if request.method == 'POST':
         my_title = request.POST.get('title')
@@ -134,13 +135,13 @@ def form_app(request):
 
     data = {}
 
-    return render(request, 'post_blog/form_app.html', data)
+    return render(request, 'post_blog/form_create_url.html', data)
 
 
 ### Metodo 3:
     # Formulario tres
 
-def form_app_sky(request):
+def form_create_raw(request):
     
     ### Metodo uno:
 
@@ -178,7 +179,7 @@ def form_app_sky(request):
         'form': my_form,
     }
 
-    return render(request, 'post_blog/form_app_sky.html', data)
+    return render(request, 'post_blog/form_create_raw.html', data)
 
 ## END: FORMULARIOS ##
 

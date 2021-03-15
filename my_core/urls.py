@@ -29,10 +29,10 @@ urlpatterns = [
     path('template_app/', views.template_app, name='template_app'),
     ### END: MAIN TEMPLATE VIEW ###
     ### FORMULARIOS ###
-        ## localhost:8000/form_app/?title=django
-    path('form_app/', views.form_app, name='form_app'),
+        ## localhost:8000/form_air/?title=django
     path('form_create_view/', views.form_create_view, name='form_create_view'),
-    path('form_app_sky/', views.form_app_sky, name='form_app_sky'),
+    path('form_url/', views.form_create_url, name='form_url'),
+    path('form_create_raw/', views.form_create_raw, name='form_create_raw'),
     ### END: FORMULARIOS ###
     ### Render Initial Data ###
     path('render_init_data/', views.render_initial_data, name='render_init_data' ),

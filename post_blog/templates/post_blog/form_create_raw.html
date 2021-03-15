@@ -1,13 +1,14 @@
 {% extends 'main.html' %}
 
-{% block title %} 
-    Formulario 2 
-{% endblock %}
+{% block title %} Formulario 2 {% endblock %}
 
 {% block content %}
+
     <div>
-        <H1>Render initial data</H1>
-        <h2>Hacer referncia a un objecto, and update</h2>
+        <!-- FORMULARIO RAW WIDGET: 
+                Metodo TRES
+        -->
+        <h2>Form width Raw Widget</h2>
         <form action="." method="POST">
             {% csrf_token %}
             {{ form.as_p }}
