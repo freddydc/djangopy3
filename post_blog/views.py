@@ -122,8 +122,8 @@ def form_create_view(request):
 def form_create_url(request):
 
     ## For get method example:
-        # <== For view this: ==>
-            # localhost:8000/form_app/?title=a title here
+        # <== View example: ==>
+            # localhost:8000/form_url/?title=a title here
     print(f"\nForm req GET: {request.GET} \nForm req GET (title): {request.GET['title']} \nForm req POST: {request.POST}\n")
 
     if request.method == 'POST':
@@ -166,8 +166,8 @@ def form_create_raw(request):
             # Now the data is good.
             print(f"Form is valid: {my_form.cleaned_data}\n")
 
-            ### Guardar formulario en base data:
-                # Utilizar doble * (**name...) para pasar argumentos key, value.
+            ### SAVE FORM IN BASE DATA:
+                # Utilizar doble "*" (**name...) para pasar argumentos KEY, VALUE.
             Post.objects.create(**my_form.cleaned_data)
 
             print(f"Get form for save: {Post.objects.create(**my_form.cleaned_data)}\n")
